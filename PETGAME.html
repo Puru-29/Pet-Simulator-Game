@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Virtual Pet Simulator</title>
+  <link rel="stylesheet" href="PETGAME.css">
+</head>
+<body>
+  <!-- Start Screen -->
+  <div id="startScreen" class="overlay">
+    <div class="overlay-content">
+      <h1 class="accent">🐾 Virtual Pet Simulator</h1>
+      <p>Take care of your virtual friend!</p>
+      <button id="startBtn" class="btn primary">Play</button>
+    </div>
+  </div>
+
+  <!-- Pause Screen -->
+  <div id="pauseScreen" class="overlay hidden">
+    <div class="overlay-content">
+      <h2>⏸️ Paused</h2>
+      <button id="resumeBtn" class="btn primary">Resume</button>
+    </div>
+  </div>
+
+  <!-- Game UI -->
+  <div id="gameUI" class="hidden">
+    <div class="shell">
+      <div class="glass topbar">
+        <div class="brand">
+          <div class="logo">🐾</div>
+          <h2 class="accent">PetSim</h2>
+        </div>
+        <div class="right">
+          <div class="time"><span id="clock">06:00</span> | <span id="phase">Day</span></div>
+          <button id="themeBtn" class="btn ghost">Theme</button>
+          <button id="resetBtn" class="btn ghost">Reset</button>
+          <button id="pauseBtn" class="btn ghost">Pause</button>
+        </div>
+      </div>
+
+      <div class="layout">
+        <!-- Left panel -->
+        <div class="panel">
+          <div class="glass card">
+            <h3>Status</h3>
+            <div class="meter">Hunger: <span id="hungerVal"></span>
+              <div class="bar"><div id="hungerFill" class="fill"></div></div>
+            </div>
+            <div class="meter">Happiness: <span id="happinessVal"></span>
+              <div class="bar"><div id="happinessFill" class="fill"></div></div>
+            </div>
+            <div class="meter">Energy: <span id="energyVal"></span>
+              <div class="bar"><div id="energyFill" class="fill"></div></div>
+            </div>
+            <div>Mood: <span id="moodText"></span></div>
+          </div>
+
+          <div class="glass card">
+            <h3>Achievements</h3>
+            <ul id="achList" class="ach-list"></ul>
+          </div>
+        </div>
+
+        <!-- Center panel -->
+        <div class="glass card big stage">
+          <div class="pet-wrap">
+            <div id="pet" class="pet">🐱</div>
+          </div>
+          <div class="controls">
+            <button id="feedBtn" class="btn primary">Feed</button>
+            <button id="playBtn" class="btn primary">Play</button>
+            <button id="sleepBtn" class="btn primary">Sleep</button>
+            <button id="cleanBtn" class="btn primary">Clean</button>
+          </div>
+          <div class="controls">
+            <button id="spinBtn" class="btn ghost">Spin</button>
+            <button id="bounceBtn" class="btn ghost">Bounce</button>
+          </div>
+        </div>
+
+        <!-- Right panel -->
+        <div class="panel">
+          <div class="glass card log">
+            <h3>Activity Log</h3>
+            <div id="logFeed" class="log-feed"></div>
+          </div>
+
+          <div class="glass card">
+            <h3>Choose Pet</h3>
+            <div class="pet-chooser">
+              <button class="chip active" data-skin="cat">🐱 Cat</button>
+              <button class="chip" data-skin="panda">🐼 Panda</button>
+              <button class="chip" data-skin="bunny">🐰 Bunny</button>
+            </div>
+          </div>
+
+          <div class="glass card">
+            <h3>Tips</h3>
+            <ul class="tips">
+              <li>Feed your pet to reduce hunger.</li>
+              <li>Play to increase happiness.</li>
+              <li>Let your pet sleep to restore energy.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass foot">© 2025 Virtual Pet Simulator</div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast"></div>
+
+  <script src="PETGAME.js"></script>
+</body>
+</html>
